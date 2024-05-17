@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoiceParaphrasing Translator</title>
+<link rel="stylesheet" href="../static/css/styles.css">
+<style>
+    @font-face {
+        font-family: 'ArtisticFont';
+        src: url('../static/fonts/ArtisticFont.ttf') format('truetype');
+        /* 添加其他字体格式，如.woff或.svg */
+    }
+
+    .main-title .logo-text {
+        font-family: 'ArtisticFont', sans-serif;
+        /* 如果ArtisticFont不可用，回退到默认字体 */
+    }
+
+    .main-title {
+        margin-bottom: 10px;
+    }
+
+    .horizontal-line {
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+    }
+</style>
+</head>
+<body>
+    <div class="main-title">
+        <span class="logo-text">VoiceParaphrasing</span> <span class="subtitle">Translator</span>
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="translator-container">
+        <div>
+            <label id="language-label" for="language-select">Language:</label>
+            <select id="language-select">
+            <option value="">Unlimited</option>
+            <option value="zh-CN">Chinese</option>
+            <option value="en-US">English</option>
+            </select>
+        </div>
+        <div class="translator-side">
+            <div class="header" style="font-weight: bold;">Voice-input</div>
+            <textarea class="text-field" placeholder="Original Voice-input text"></textarea>
+            <div class="button-group"><!--Button to record-->
+                <button class="icon-button" onclick="toggleRecording()">
+                    <img src="../static/pictures/mic.png" alt="Record">
+                    <div class="button-label">Microphone</div>
+                </button>
+                <button class="icon-button" onclick="stopRecording()">
+                    <img src="../static/pictures/stop.png" alt="Stop Recording">
+                    <div class="button-label">Stop</div>
+                </button>
+            </div>
+            <!-- <div>
+                <label id="language-label" for="language-select">Language:</label>
+                <select id="language-select">
+                <option value="">Unlimited</option>
+                <option value="zh-CN">Chinese</option>
+                <option value="en-US">English</option>
+                </select>
+            </div> -->
+        </div>
+        <div class="translator-side">
+            <div class="header" style="font-weight: bold;">Translation</div>
+            <textarea class="output-field" placeholder="Text processing and rewriting by ChatGPT" readonly></textarea>
+            <div class="button-group"><!--Button to translate-->
+                <button class="icon-button translate" onclick="translateText()">
+                    <img src="../static/pictures/translate.png" alt="Translate">
+                    <div class="button-label">translator</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
